@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licornes.com - Location de Licornes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+        }
+        header {
+            background-color: #ff69b4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ff69b4;
+        }
+        nav a {
+            padding: 14px 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #ff1493;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Licornes.com</h1>
+    <p>Spécialiste de la location de licornes</p>
+</header>
+
+<nav>
+    <a href="#" onclick="showTab('services')">Nos Services</a>
+    <a href="#" onclick="showTab('tarifs')">Nos Tarifs</a>
+    <a href="#" onclick="showTab('contact')">Nous Contacter</a>
+</nav>
+
+<div id="services" class="tab-content active">
+    <h2>Nos Services</h2>
+    <p>Chez Licornes.com, nous offrons une variété de services pour rendre votre événement magique :</p>
+    <ul>
+        <li>Location de licornes pour fêtes d'anniversaire</li>
+        <li>Location de licornes pour mariages</li>
+        <li>Parades de licornes pour des événements spéciaux</li>
+        <li>Et bien plus encore !</li>
+    </ul>
+</div>
+
+<div id="tarifs" class="tab-content">
+    <h2>Nos Tarifs</h2>
+    <p>Nos tarifs de location de licornes sont les suivants :</p>
+    <ul>
+        <li>Fête d'anniversaire : 200€ par heure</li>
+        <li>Mariage : 500€ pour une demi-journée</li>
+        <li>Parade spéciale : 1000€ pour une journée entière</li>
+    </ul>
+    <p>Pour des services personnalisés, veuillez nous contacter directement.</p>
+</div>
+
+<div id="contact" class="tab-content">
+    <h2>Nous Contacter</h2>
+    <p>Pour toute demande de renseignements ou pour réserver une licorne, veuillez nous contacter :</p>
+    <form>
+        <label for="name">Nom:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Envoyer">
+    </form>
+</div>
+
+<script>
+    function showTab(tabId) {
+        // Hide all tab contents
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+        
+        // Show the selected tab content
+        const activeTab = document.getElementById(tabId);
+        activeTab.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
